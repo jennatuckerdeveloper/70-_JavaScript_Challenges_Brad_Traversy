@@ -1,3 +1,7 @@
-function findMaxNumber() {}
+// For some reason, Brad doesn't want you to use Math.max.
+// const findMaxNumber = (numArr) => Math.max(...numArr)
 
-module.exports = findMaxNumber;
+const findMaxNumber = (numArr) =>
+	numArr.reduce((acc, currentVal) => (acc > currentVal ? acc : currentVal))
+
+module.exports = findMaxNumber
