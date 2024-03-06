@@ -1,3 +1,5 @@
+// This is my original solution.
+/*  
 const findMissingNumber = (nums) => {
 	if (!nums) return
 	if (!nums.length) return 1
@@ -13,15 +15,19 @@ const findMissingNumber = (nums) => {
 
 	return missingNum
 }
+*/
 
-// Math version!  I did not think of using a formula.
-// This might be a good optimization.
-// Oh, this is to teach a CS concept.
-// So I will start here tomorrow!
+// There is a math version of a solution important to computer science.
 // https://www.reddit.com/r/mathematics/comments/v3tgpx/dont_understand_why_n_n_1_2/
-// const findMissingNumber = (nums) => {
-//   const sum = nums.reduce((sum, num) => sum + num, 0)
 
-// }
+const findMissingNumber = (nums) => {
+	if (!nums) return
+	if (!nums.length) return 1
+	const foundSum = nums.reduce((sum, num) => sum + num, 0)
+	const sequential = nums.sort((a, b) => a - b)
+	const n = sequential[sequential.length - 1]
+	const sequentialSum = (n * (n + 1)) / 2
+	return sequentialSum - foundSum
+}
 
 module.exports = findMissingNumber
