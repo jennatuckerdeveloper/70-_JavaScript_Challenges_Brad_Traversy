@@ -1,3 +1,4 @@
-function validAnagrams() {}
+const validAnagrams = (str1, str2) =>
+	str1.split('').sort().join() === str2.split('').sort().join()
 
-module.exports = validAnagrams;
+module.exports = validAnagrams
